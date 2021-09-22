@@ -38,12 +38,10 @@ int search(int a[row][column], int element)
 int main()
 {
     int arr[row][column];
-
     get_array(arr);
     int element;
     printf("Enter the element to search : ");
     scanf("%d",&element);
     search(arr, element);
-
     return 0;
 }
