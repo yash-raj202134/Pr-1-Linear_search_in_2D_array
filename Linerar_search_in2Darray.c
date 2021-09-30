@@ -1,0 +1,48 @@
+//Linear searching in 2D array
+#include <stdio.h>
+
+#define row 3
+#define column 3
+void get_array(int a[row][column])
+{
+    for (int i = 0; i < row; i++)
+    {
+        for (int j = 0; j < column; j++)
+        {
+            printf("Enter the element(%d,%d) :", i, j);
+            scanf("%d", &a[i][j]);
+        }
+        printf("\n");
+    }
+}
+
+int search(int a[row][column], int element)
+{
+    int count = 0;
+    for (int i = 0; i < row; i++)
+    {
+        for (int j = 0; j < column; j++)
+        {
+            if (a[i][j] == element)
+            {
+                printf("Element %d found at location (%d,%d)\n", element, i, j);
+                count++;
+            }
+        }
+    }
+    if (count == 0)
+    {
+        printf("\nNo result found for element %d\n", element);
+    }
+return 0;
+}
+int main(void)
+{
+    int arr[row][column];
+    get_array(arr);
+    int element;
+    printf("Enter the element to search : ");
+    scanf("%d",&element);
+    search(arr, element);
+    return 0;
+}
